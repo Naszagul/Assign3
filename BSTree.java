@@ -1,7 +1,13 @@
 public class BSTree<E extends Comparable<? super E>> implements BSTreeADT<E> {
     private BSTreeNode<E> root;
 
-    public BSTreeNode
+    public BSTree(){
+        this.root=null;
+    }
+    public BSTree(E element){
+        this.root= new BSTreeNode<E>(element, null, null);
+    }
+    
     @Override
     public BSTreeNode getRoot() throws TreeException {
         // TODO Auto-generated method stub
