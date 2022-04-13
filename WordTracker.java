@@ -1,16 +1,15 @@
 import java.util.*;
 import java.io.*;
-import java.lang.reflect.Array;
 
 public class WordTracker{
-        public static void printWordsInOrder(String command, File file)throws IOException{
+        public static void printWordsInOrder(String command, File file)throws IOException, TreeException{
             
             /* -> read in supplied text file DONE
              -> print all words in alphabetical order 	DONE
              -> print words in alphabetical order and the lines on which they occur "start 1" DONE
              -> print words in alphabetical order and the lines on which they occur and frequency start occurs twice->"start 1, 2"*/
 
-            BSTree tree = new BSTree<>();
+            BSTree tree = new BSTree<String>();
             String element = "";
 
             Scanner scan = new Scanner(file);
@@ -28,13 +27,15 @@ public class WordTracker{
                     lineArray[i] = lineArray[i].replaceAll("\\p{Punct}", "") + "," + String.valueOf(lineNo);
                     System.out.println(lineArray[i]);
                     tree.add(lineArray[i]);
+
                     //find the frequency of repetition on that line
                 }
             }
-
+            System.out.println(tree.search("trees,8").element);
             if(command.equals("-po") || command.equals("-pl")){
                 //do pl
-                tree.search("trees");
+                //System.out.println(tree.search("trees"));
+                
                 if(command.equals("-po")){
                     //do po
                 }
@@ -43,7 +44,7 @@ public class WordTracker{
             scan.close();
         }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, TreeException {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter command: ");
         String command = input.nextLine();

@@ -15,14 +15,14 @@ import java.io.*;
  * Binary Tree implementation.
  * 
  */
-public interface BSTreeADT<String> extends	Serializable
+public interface BSTreeADT<E> extends Serializable
 {
 	/**
 	 * The node at the root of the Binary Search Tree will be returned.
 	 * @return node stored at the root of tree is returned
 	 * @throws TreeException if the root is empty.
 	 */
-	public BSTreeNode<String> getRoot() throws TreeException;
+	public BSTreeNode<E> getRoot() throws TreeException;
 	
 	/**
 	 * Determines the row height of the tree and returns that value as an
@@ -58,7 +58,7 @@ public interface BSTreeADT<String> extends	Serializable
 	 * false if the element is not found in the tree
 	 * @throws TreeException if the tree is empty.
 	 */
-	public boolean contains(String entry) throws TreeException;
+	public boolean contains(E entry) throws TreeException;
 	
 	/**
 	 * Retrieves a node from the tree given the object to search for.
@@ -66,7 +66,7 @@ public interface BSTreeADT<String> extends	Serializable
 	 * @return the node with the element located in tree, null if not found
 	 * @throws TreeException if the tree is empty
 	 */
-	public BSTreeNode<String> search(String entry) throws TreeException;
+	public BSTreeNode<E> search(E entry) throws TreeException;
 	
 	/**
 	 * Adds a new element to the tree according to the natural ordering
@@ -75,26 +75,26 @@ public interface BSTreeADT<String> extends	Serializable
 	 * @return a boolean true if the element is added successfully else false
 	 * @throws NullPointerException if the element being added is null
 	 */
-	public boolean add(String newEntry) throws NullPointerException;
+	public boolean add(E newEntry) throws NullPointerException;
 	
 	/**
 	 * Generates an in-order iteration over the contents of the tree. Elements
 	 * are in their natural order.
 	 * @return an iterator with the elements in the natural order
 	 */
-	public Iterator<String> inorderIterator();
+	public Iterator<E> inorderIterator();
 	
 	/**
 	 * Generates a pre-order iteration over the contents of the tree. Elements
 	 * are order in such a way as the root element is first.
 	 * @return an iterator with the elements in a root element first order
 	 */
-	public Iterator<String> preorderIterator();
+	public Iterator<E> preorderIterator();
 	
 	/**
 	 * Generates a post-order iteration over the contents of the tree. Elements
 	 * are order in such a way as the root element is last.
 	 * @return an iterator with the elements in a root element last order
 	 */
-	public Iterator<String> postorderIterator();
+	public Iterator<E> postorderIterator();
 }
