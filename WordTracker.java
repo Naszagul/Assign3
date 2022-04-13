@@ -21,20 +21,25 @@ public class WordTracker{
             while (scan.hasNextLine()){
                 lineNo++;
                 String line = scan.nextLine();
-                String [] lineArray = line.split(" ");
-
+                Object[] lineArray = line.split(" ");
                 for (int i = 0; i < lineArray.length; i++){
-                    lineArray[i] = lineArray[i].replaceAll("\\p{Punct}", "") + "," + String.valueOf(lineNo);
+                    lineArray[i] = String.valueOf(lineArray[i]).replaceAll("\\p{Punct}", "") + "," + String.valueOf(lineNo);
                     System.out.println(lineArray[i]);
                     tree.add(lineArray[i]);
 
                     //find the frequency of repetition on that line
                 }
             }
-            System.out.println(tree.search("trees,8").element);
+            try{
+            System.out.println(tree.search("tres")[0]);
+            }catch(Exception e){System.out.println("null");}
             if(command.equals("-po") || command.equals("-pl")){
                 //do pl
-                //System.out.println(tree.search("trees"));
+                // String[] yep = String.valueOf(tree.search("trees")).split(",");
+                // System.out.println(yep[1]);
+               
+                //String result = tree.search("trees,8").element;
+
                 
                 if(command.equals("-po")){
                     //do po

@@ -1,5 +1,5 @@
 
-public class BSTree<E> {
+public class BSTree<E> implements BSTreeADT<E>{
     private BSTreeNode<E> root;
     private int height;
     private int size;
@@ -15,44 +15,45 @@ public class BSTree<E> {
         this.size=1;
     }
 
-    
+    @Override
     public BSTreeNode getRoot() throws TreeException {
         return this.root;
     }
 
-    
+    @Override
     public int getHeight() {
         return this.height;
     }
 
-    
+    @Override
     public int size() {
         return this.size;
     }
 
-    
+    @Override
     public boolean isEmpty() {
         return size()==0;
     }
 
-    
+    @Override
     public void clear() {
         this.root=null;
     }
 
-
+    @Override
     public boolean contains(E entry) throws TreeException {
         return search(entry)!=null;
     }
     
-
-    
-    public BSTreeNode search(E entry) throws TreeException {
+    @Override
+    public String[] search(E entry) throws TreeException {
         // return null if not found.
         BSTreeNode current = root;
+        
         while(current!=null){
-            if(current.element.equals(entry)){
-                return current;
+            String[] value = String.valueOf(current.element).split(",");
+            if(value[0].equals(entry)){
+                return value;
             }else if(compareStrings(entry, (E)current.element) < 0){
                 current = current.left;
             }else{
@@ -62,9 +63,7 @@ public class BSTree<E> {
         return null;
     }
     
-    
-
-   
+    @Override
     public boolean add(E entry) throws NullPointerException {
         BSTreeNode node = new BSTreeNode<E>((E)entry, null, null);
         if(this.root==null){
@@ -121,19 +120,19 @@ public class BSTree<E> {
         }
     }
     
-    
+    @Override
     public Iterator inorderIterator() {
         // TODO Auto-generated method stub
         return null;
     }
 
-    
+    @Override
     public Iterator preorderIterator() {
         // TODO Auto-generated method stub
         return null;
     }
 
-   
+    @Override
     public Iterator postorderIterator() {
         // TODO Auto-generated method stub
         return null;

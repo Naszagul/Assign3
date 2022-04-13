@@ -66,7 +66,7 @@ public interface BSTreeADT<E> extends Serializable
 	 * @return the node with the element located in tree, null if not found
 	 * @throws TreeException if the tree is empty
 	 */
-	public BSTreeNode<E> search(E entry) throws TreeException;
+	public String[] search(E entry) throws TreeException;
 	
 	/**
 	 * Adds a new element to the tree according to the natural ordering
