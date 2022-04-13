@@ -1,8 +1,8 @@
-public class BSTreeNode<E> {
-    public E element;
-    public BSTreeNode<E> left, right;
+public class BSTreeNode<String> {
+    public String element;
+    public BSTreeNode<String> left, right;
 
-    public BSTreeNode(E elem, BSTreeNode<E> left, BSTreeNode<E> right){
+    public BSTreeNode(String elem, BSTreeNode<String> left, BSTreeNode<String> right){
         this.element = elem; 
         this.left = left;		
         this.right = right;

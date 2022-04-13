@@ -12,9 +12,9 @@ import java.util.NoSuchElementException;
  * complete walk through the data structure. Note that the copy must be a 
  * deep copy, so methods such as clone() should not be used.
  *
- * @param <E> The type of element this iterator returns. 
+ * @param <String> The type of element this iterator returns. 
  */
-public interface Iterator<E> 
+public interface Iterator<String>
 {	
 	/**
 	 * Returns <code>true</code> if the iteration has more elements. 
@@ -33,5 +33,5 @@ public interface Iterator<E>
 	 * @throws NoSuchElementException
 	 * 			If the iteration has no more elements.
 	 */
-	public E next() throws NoSuchElementException;
+	public String next() throws NullPointerException;
 }
