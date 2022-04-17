@@ -80,21 +80,24 @@ public interface BSTreeADT<E> extends Serializable
 	/**
 	 * Generates an in-order iteration over the contents of the tree. Elements
 	 * are in their natural order.
-	 * @return an iterator with the elements in the natural order
+	 * @param p 
+	 *@return an iterator with the elements in the natural order
 	 */
-	public Iterator<E> inorderIterator();
+	public BSTreeNode<E> inorderIterator(BSTreeNode<E> p);
 	
 	/**
 	 * Generates a pre-order iteration over the contents of the tree. Elements
 	 * are order in such a way as the root element is first.
-	 * @return an iterator with the elements in a root element first order
+	 * @param p 
+	 *@return an iterator with the elements in a root element first order
 	 */
-	public Iterator<E> preorderIterator();
+	public BSTreeNode<E> preorderIterator(BSTreeNode<E> p);
 	
 	/**
 	 * Generates a post-order iteration over the contents of the tree. Elements
 	 * are order in such a way as the root element is last.
-	 * @return an iterator with the elements in a root element last order
+	 * @param p 
+	 *@return an iterator with the elements in a root element last order
 	 */
-	public Iterator<E> postorderIterator();
+	public BSTreeNode<E> postorderIterator(BSTreeNode<E> p);
 }

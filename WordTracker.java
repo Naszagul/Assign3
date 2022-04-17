@@ -24,22 +24,17 @@ public class WordTracker{
                 Object[] lineArray = line.split(" ");
                 for (int i = 0; i < lineArray.length; i++){
                     lineArray[i] = String.valueOf(lineArray[i]).replaceAll("\\p{Punct}", "") + "," + String.valueOf(lineNo);
-                    System.out.println(lineArray[i]);
+                    //System.out.println(lineArray[i]);
                     tree.add(lineArray[i]);
 
                     //find the frequency of repetition on that line
                 }
             }
             try{
-            System.out.println(tree.search("tres")[0]);
+            //System.out.println(tree.search("tres")[0]);
             }catch(Exception e){System.out.println("null");}
             if(command.equals("-po") || command.equals("-pl")){
-                //do pl
-                // String[] yep = String.valueOf(tree.search("trees")).split(",");
-                // System.out.println(yep[1]);
-               
-                //String result = tree.search("trees,8").element;
-
+                tree.inorderIterator(tree.getRoot());
                 
                 if(command.equals("-po")){
                     //do po
