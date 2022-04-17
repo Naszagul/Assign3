@@ -83,7 +83,7 @@ public interface BSTreeADT<E> extends Serializable
 	 * @param p 
 	 *@return an iterator with the elements in the natural order
 	 */
-	public BSTreeNode<E> inorderIterator(BSTreeNode<E> p);
+	public BSTreeNode<E> inorderIterator_pl(BSTreeNode<E> p);
 	
 	/**
 	 * Generates a pre-order iteration over the contents of the tree. Elements

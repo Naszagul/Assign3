@@ -124,11 +124,18 @@ public class BSTree<E> implements BSTreeADT<E>{
     }
 
     // @Override
-	public BSTreeNode<E> inorderIterator(BSTreeNode<E> p) {
+	public BSTreeNode<E> inorderIterator_pl(BSTreeNode<E> p) {
         if (p!=null) {
-            inorderIterator(p.getLeft()); 		//L
+            inorderIterator_pl(p.getLeft()); 		//L
             System.out.println(p.element); 				//V
-            inorderIterator(p.getRight()); 	//R
+            inorderIterator_pl(p.getRight()); 	//R
+        } return null; 
+    }
+    public BSTreeNode<E> inorderIterator_pf(BSTreeNode<E> p) {
+        if (p!=null) {
+            inorderIterator_pf(p.getLeft()); 		//L
+            System.out.println(p.element.toString().split(",")[0]); 				//V
+            inorderIterator_pf(p.getRight()); 	//R
         } return null; 
     }
     

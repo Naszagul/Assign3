@@ -23,22 +23,16 @@ public class WordTracker{
                 String line = scan.nextLine();
                 Object[] lineArray = line.split(" ");
                 for (int i = 0; i < lineArray.length; i++){
-                    lineArray[i] = String.valueOf(lineArray[i]).replaceAll("\\p{Punct}", "") + "," + String.valueOf(lineNo);
-                    //System.out.println(lineArray[i]);
+                    lineArray[i] = String.valueOf(lineArray[i]).replaceAll("\\p{Punct}", "") + ", Line number: " + String.valueOf(lineNo);
                     tree.add(lineArray[i]);
-
-                    //find the frequency of repetition on that line
                 }
             }
-            try{
-            //System.out.println(tree.search("tres")[0]);
-            }catch(Exception e){System.out.println("null");}
-            if(command.equals("-po") || command.equals("-pl")){
-                tree.inorderIterator(tree.getRoot());
-                
-                if(command.equals("-po")){
-                    //do po
-                }
+
+            if(command.equals("-pf")){
+            tree.inorderIterator_pf(tree.getRoot());
+            }
+            if(command.equals("-pl")){
+                tree.inorderIterator_pl(tree.getRoot());
             }
 
             scan.close();
@@ -56,7 +50,7 @@ public class WordTracker{
         }
 
         System.out.print("Enter file path: ");
-        String path = "text/textfile.txt";//input.nextLine();
+        String path = input.nextLine();
         
         File file = new File(path);
 
