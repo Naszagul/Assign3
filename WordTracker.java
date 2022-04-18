@@ -37,6 +37,7 @@ public class WordTracker{
 
     public static void main(String[] args) throws IOException, TreeException {
         Scanner input = new Scanner(System.in);
+        System.out.print("Commands: -pf -pl");
         System.out.print("Enter command: ");
         String command = input.nextLine();
 
@@ -46,7 +47,7 @@ public class WordTracker{
             return;
         }
 
-        System.out.print("Enter file path: ");
+        System.out.print("Enter path of text file: ");
         String path = input.nextLine();
         
         File file = new File(path);
