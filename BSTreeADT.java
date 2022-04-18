@@ -25,13 +25,6 @@ public interface BSTreeADT<E> extends Serializable
 	public BSTreeNode<E> getRoot() throws TreeException;
 	
 	/**
-	 * Determines the row height of the tree and returns that value as an
-	 * integer value.
-	 * @return the height of the tree.
-	 */
-	public int getHeight();
-	
-	/**
 	 * The number of elements currently stored in the tree is counted and
 	 * the value is returned.
 	 * @return number of elements currently stored in tree.
@@ -66,7 +59,7 @@ public interface BSTreeADT<E> extends Serializable
 	 * @return the node with the element located in tree, null if not found
 	 * @throws TreeException if the tree is empty
 	 */
-	public String[] search(E entry) throws TreeException;
+	public String search(E entry) throws TreeException;
 	
 	/**
 	 * Adds a new element to the tree according to the natural ordering
@@ -83,7 +76,7 @@ public interface BSTreeADT<E> extends Serializable
 	 * @param p 
 	 *@return an iterator with the elements in the natural order
 	 */
-	public BSTreeNode<E> inorderIterator_pl(BSTreeNode<E> p);
+	public void inorderIterator_pl(BSTreeNode<E> p);
 	
 	/**
 	 * Generates a pre-order iteration over the contents of the tree. Elements
@@ -91,7 +84,7 @@ public interface BSTreeADT<E> extends Serializable
 	 * @param p 
 	 *@return an iterator with the elements in a root element first order
 	 */
-	public BSTreeNode<E> preorderIterator(BSTreeNode<E> p);
+	public void preorderIterator(BSTreeNode<E> p);
 	
 	/**
 	 * Generates a post-order iteration over the contents of the tree. Elements
@@ -99,5 +92,5 @@ public interface BSTreeADT<E> extends Serializable
 	 * @param p 
 	 *@return an iterator with the elements in a root element last order
 	 */
-	public BSTreeNode<E> postorderIterator(BSTreeNode<E> p);
+	public void postorderIterator(BSTreeNode<E> p);
 }

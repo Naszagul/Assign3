@@ -10,13 +10,10 @@ public class WordTracker{
              -> print words in alphabetical order and the lines on which they occur and frequency start occurs twice->"start 1, 2"*/
 
             BSTree tree = new BSTree<String>();
-            String element = "";
 
             Scanner scan = new Scanner(file);
-            //LineNumberReader lineReader = new LineNumberReader(new FileReader(file));
 
             int lineNo=0;
-            
 
             while (scan.hasNextLine()){
                 lineNo++;
@@ -29,7 +26,7 @@ public class WordTracker{
             }
 
             if(command.equals("-pf")){
-            tree.inorderIterator_pf(tree.getRoot());
+                tree.inorderIterator_pf(tree.getRoot());
             }
             if(command.equals("-pl")){
                 tree.inorderIterator_pl(tree.getRoot());
@@ -43,8 +40,8 @@ public class WordTracker{
         System.out.print("Enter command: ");
         String command = input.nextLine();
 
-        if(!(command.equals("-pf") || command.equals("-pl") || command.equals("-po"))){
-            System.out.println("Invalid command, please enter one of: -pf, -pl, -po");
+        if(!(command.equals("-pf") || command.equals("-pl"))){
+            System.out.println("Invalid command, please enter one of: -pf, or -pl");
             input.close();
             return;
         }

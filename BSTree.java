@@ -1,28 +1,21 @@
+import java.io.*;
 
 public class BSTree<E> implements BSTreeADT<E>{
     private BSTreeNode<E> root;
-    private int height;
     private int size;
 
     public BSTree(){
         this.root=null;
-        this.height=0;
         this.size=0;
     }
     public BSTree(E element){
         this.root= new BSTreeNode<E>(element, null, null);
-        this.height=1;
         this.size=1;
     }
 
     @Override
     public BSTreeNode<E> getRoot() throws TreeException {
         return this.root;
-    }
-
-    @Override
-    public int getHeight() {
-        return this.height;
     }
 
     @Override
@@ -38,6 +31,7 @@ public class BSTree<E> implements BSTreeADT<E>{
     @Override
     public void clear() {
         this.root=null;
+        this.size=0;
     }
 
     @Override
@@ -46,14 +40,14 @@ public class BSTree<E> implements BSTreeADT<E>{
     }
     
     @Override
-    public String[] search(E entry) throws TreeException {
+    public String search(E entry) throws TreeException {
         // return null if not found.
         BSTreeNode<E> current = root;
         
         while(current!=null){
             String[] value = String.valueOf(current.element).split(",");
             if(value[0].equals(entry)){
-                return value;
+                return value[0];
             }else if(compareStrings(entry, (E)current.element) < 0){
                 current = current.left;
             }else{
@@ -124,36 +118,36 @@ public class BSTree<E> implements BSTreeADT<E>{
     }
 
     // @Override
-	public BSTreeNode<E> inorderIterator_pl(BSTreeNode<E> p) {
+	public void inorderIterator_pl(BSTreeNode<E> p) {
         if (p!=null) {
             inorderIterator_pl(p.getLeft()); 		//L
             System.out.println(p.element); 				//V
             inorderIterator_pl(p.getRight()); 	//R
-        } return null; 
+        } 
     }
-    public BSTreeNode<E> inorderIterator_pf(BSTreeNode<E> p) {
+    public void inorderIterator_pf(BSTreeNode<E> p) {
         if (p!=null) {
             inorderIterator_pf(p.getLeft()); 		//L
             System.out.println(p.element.toString().split(",")[0]); 				//V
             inorderIterator_pf(p.getRight()); 	//R
-        } return null; 
+        }
     }
     
     // @Override
-    public BSTreeNode<E> preorderIterator(BSTreeNode<E> p) {
+    public void preorderIterator(BSTreeNode<E> p) {
         if (p!=null) {
            System.out.println(p.element);				//V
             preorderIterator(p.getLeft());		//L
             preorderIterator(p.getRight());	//R
-        } return null; 
+        }
     }
 
     // @Override
-	public BSTreeNode<E> postorderIterator(BSTreeNode<E> p) {
+	public void postorderIterator(BSTreeNode<E> p) {
         if (p!=null) {
             postorderIterator(p.getLeft()); 	//L
             postorderIterator(p.getRight()); 	//R
            System.out.println(p.element); 			//V
-        } return null; 
+        }
     }
 }
